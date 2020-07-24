@@ -16,6 +16,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Cake</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
