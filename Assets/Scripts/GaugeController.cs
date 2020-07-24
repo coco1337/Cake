@@ -33,6 +33,8 @@ public sealed class GaugeController : MonoBehaviour
 				yield return null;
 			}
 		}
+
+		strawberryCount = 0;
 	}
 
 	public void IncreaseStrawberryCount()
