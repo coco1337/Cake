@@ -44,6 +44,7 @@ public sealed class MapRotateController : MonoBehaviour
     {
         float totalRotate = 0;
         Vector3 axis = rotateCode > 0 ? Vector3.up : Vector3.down;
+        Vector3 rot = mMapTrans.rotation.eulerAngles;
 
         while (totalRotate <= 90f)
         {
@@ -51,6 +52,9 @@ public sealed class MapRotateController : MonoBehaviour
             mMapTrans.RotateAround(mPlayerTrans.position, axis, mRotateSpeed);
             yield return mWaitFrame;
         }
+
+        float newY = rot.y + (90f * axis.y);
+        mMapTrans.rotation = Quaternion.Euler(new Vector3(0, newY, 0));
         mRotateCoroutine = null;
     }
 }
