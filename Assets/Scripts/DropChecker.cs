@@ -11,9 +11,9 @@ public class DropChecker : MonoBehaviour
         {
             Debug.Log("Player Trigger on");
 
-            var cc = other.gameObject.GetComponent<CharacterController>();
-            cc.Move(Vector3.zero);
-            other.gameObject.transform.position = mStartPosition;
+            //var cc = other.gameObject.GetComponent<CharacterController>();
+            //cc.(Vector3.zero);
+            //other.gameObject.transform.position = mStartPosition;
         }
     }
 }
