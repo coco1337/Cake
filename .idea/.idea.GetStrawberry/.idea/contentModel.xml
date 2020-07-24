@@ -11,6 +11,9 @@
           <e p="GaugeController.cs" t="Include" />
           <e p="MapRotateController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="Shaders" t="Include">
+            <e p="AlwaysVisible.shader" t="Include" />
+          </e>
           <e p="Strawberry.cs" t="Include" />
         </e>
       </e>
