@@ -3,17 +3,16 @@
 [RequireComponent(typeof(BoxCollider))]
 public class DropChecker : MonoBehaviour
 {
-    [SerializeField] Vector3 mStartPosition;
+    [SerializeField] Transform mStartPosition;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player Trigger on");
-
-            //var cc = other.gameObject.GetComponent<CharacterController>();
-            //cc.(Vector3.zero);
-            //other.gameObject.transform.position = mStartPosition;
+            var cc = other.gameObject.GetComponent<CharacterController>();
+            cc.enabled = false;
+            other.gameObject.transform.position = mStartPosition.position;
+            cc.enabled = true;
         }
     }
 }

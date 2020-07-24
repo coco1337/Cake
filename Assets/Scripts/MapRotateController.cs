@@ -27,11 +27,11 @@ public sealed class MapRotateController : MonoBehaviour
     {
         int rotateCode = 0;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             rotateCode = -1;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             rotateCode = 1;
         }
@@ -42,14 +42,13 @@ public sealed class MapRotateController : MonoBehaviour
 
     IEnumerator CRotateMap(int rotateCode)
     {
-        float value = Mathf.Lerp(0, 90f, Time.deltaTime);
         float totalRotate = 0;
         Vector3 axis = rotateCode > 0 ? Vector3.up : Vector3.down;
 
-        while (totalRotate < 90f)
+        while (totalRotate <= 90f)
         {
-            mMapTrans.RotateAround(mPlayerTrans.position, axis, value);
-            totalRotate += value;
+            totalRotate += mRotateSpeed;
+            mMapTrans.RotateAround(mPlayerTrans.position, axis, mRotateSpeed);
             yield return mWaitFrame;
         }
         mRotateCoroutine = null;
