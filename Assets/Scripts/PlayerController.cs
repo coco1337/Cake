@@ -15,6 +15,8 @@ public sealed class PlayerController : MonoBehaviour
 
     public bool isSugarHighMode;
 
+    public GaugeController GC;
+
     const float mGravity = 9.8f;
     Vector3 mMoveDir = Vector3.zero;
     bool isJumping;
@@ -64,7 +66,7 @@ public sealed class PlayerController : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         var cubeBreak = hit.collider.gameObject.GetComponent<CubeBreak>();
-        if (cubeBreak != null)
+        if (cubeBreak != null && GC.GetStrawberryCount >= 2)
         {
             cubeBreak.BreakOk(this.gameObject);
         }
