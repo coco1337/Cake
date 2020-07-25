@@ -14006,6 +14006,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3616291424925728243, guid: 4c72e327e17de674caeb1fa2bfd4aa12,
+        type: 3}
+      propertyPath: gaugeController
+      value: 
+      objectReference: {fileID: 3616291426278336668}
     - target: {fileID: 3616291424925728252, guid: 4c72e327e17de674caeb1fa2bfd4aa12,
         type: 3}
       propertyPath: mMapTrans
@@ -14073,6 +14078,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c72e327e17de674caeb1fa2bfd4aa12, type: 3}
+--- !u!114 &3616291426278336668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3616291425113068805, guid: 4c72e327e17de674caeb1fa2bfd4aa12,
+    type: 3}
+  m_PrefabInstance: {fileID: 3616291426278336667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d473b91270a953e499dd9fd048df8f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3796763108637600211
 PrefabInstance:
   m_ObjectHideFlags: 0
