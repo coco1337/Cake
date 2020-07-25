@@ -3,6 +3,7 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _TexColor("Texture Color", Color) = (0, 0, 0)
         _Color("Visible Color", Color) = (0, 0, 0)
     }
     SubShader
@@ -69,6 +70,7 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            uniform float3 _TexColor;
 
             v2f vert (appdata v)
             {
@@ -81,7 +83,8 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                return col;
+                // i.albedo = _TexColor;
+                return fixed4(_TexColor, 1);
             }
             ENDCG
         }
