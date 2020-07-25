@@ -43,6 +43,7 @@ public sealed class GameManager : MonoBehaviour
 
 	private void GoNextScene(string sceneName)
 	{
+		SlicedStrawberryCounter.instance.AddStrawberryCount(gaugeController.GetStrawberryCount);
 		StartCoroutine(ControlCanvasScale(sceneName));
 	}
 
