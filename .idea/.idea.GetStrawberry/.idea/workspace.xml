@@ -29,6 +29,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shaders/CubeMapShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CubeBreak.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,6 +52,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" />
         <option value="$PROJECT_DIR$/Assets/CubeBreak.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CubeMapShader.shader" />
       </list>
     </option>
   </component>
