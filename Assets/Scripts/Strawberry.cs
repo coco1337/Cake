@@ -19,6 +19,9 @@ public sealed class Strawberry : MonoBehaviour
 			gaugeController.IncreaseStrawberryCount();
 			// TODO : 이펙트 구현
 			Destroy(this.gameObject);
+
+			//
+			SoundManager.Inst.Play("half_Strawberry");
 		}
 	}
 }
