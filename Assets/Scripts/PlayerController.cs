@@ -42,6 +42,11 @@ public sealed class PlayerController : MonoBehaviour
                 mModelTrans.localRotation = mMoveDir.x < 0 ? 
                     Quaternion.Euler(0, 180f, 0) : Quaternion.Euler(0, 0, 0);
                 mAnimator.SetBool("Walk", true);
+
+                //
+                if (!SoundManager.Inst.isPlay("walk"))
+                    SoundManager.Inst.Play("walk");
+
             }
             else // input 없음으로 인한 미끄러짐 방지
             {
@@ -71,6 +76,9 @@ public sealed class PlayerController : MonoBehaviour
             GameManager.instance.ClearStage();
             var animator = hit.transform.GetComponent<Animator>();
             animator.SetBool("Goal", true);
+
+            //
+            SoundManager.Inst.Play("full_Strawberry");
         }
         else
         {
