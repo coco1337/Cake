@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2086557581249362748}
   - component: {fileID: -3941311536189863275}
   - component: {fileID: 4569285363960350776}
+  - component: {fileID: 9025914704941324400}
   m_Layer: 0
   m_Name: GoalPrefab
   m_TagString: Goal
@@ -54,11 +55,30 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086557581249362747}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: -0.15, z: 0}
+--- !u!95 &9025914704941324400
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086557581249362747}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfcf52e9320177b44a09c638114db9b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2086557582545582783
 PrefabInstance:
   m_ObjectHideFlags: 0

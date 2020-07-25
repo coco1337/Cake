@@ -34,7 +34,8 @@ public sealed class GaugeController : MonoBehaviour
 
 		if (strawberryCount == gaugeCount)
 		{
-			UseSugarHighMode();
+			// 슈가하이 쓸모 없어짐
+			// UseSugarHighMode();
 		}
 	}
 
