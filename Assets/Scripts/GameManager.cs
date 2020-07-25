@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance;
 	
 	[SerializeField] private Player player;
+	[SerializeField] private GaugeController gaugeController;
 
 	public Player GetPlayer => player;
+	public GaugeController GetGaugeController => gaugeController;
 
 	private void Start()
 	{
