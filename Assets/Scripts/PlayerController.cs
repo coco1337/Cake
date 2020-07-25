@@ -21,6 +21,8 @@ public sealed class PlayerController : MonoBehaviour
     Vector3 mMoveDir = Vector3.zero;
     bool isJumping;
 
+    bool isDie = false;
+
     void Update()
     {
         if (mCharacterController.isGrounded)
@@ -61,11 +63,21 @@ public sealed class PlayerController : MonoBehaviour
                 mMoveDir.y = jumpPower;
                 isJumping = true;
                 mAnimator.SetBool("Jump", true);
+
+                //
+                SoundManager.Inst.Play("jump");
             }
         }
 
         mMoveDir.y -= mGravity * Time.deltaTime;
         mCharacterController.Move(mMoveDir * Time.deltaTime);
+
+        //
+        if( this.transform.localPosition.y < -3f && !isDie)
+        {
+            isDie = true;
+            SoundManager.Inst.Play("game_over");
+        }
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
