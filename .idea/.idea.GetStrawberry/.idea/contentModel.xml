@@ -15,6 +15,7 @@
           <e p="DropChecker.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GaugeController.cs" t="Include" />
+          <e p="LobbyManager.cs" t="Include" />
           <e p="Map.cs" t="Include" />
           <e p="MapRotateController.cs" t="Include" />
           <e p="Player.cs" t="Include" />
