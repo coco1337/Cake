@@ -21,6 +21,8 @@ public sealed class PlayerController : MonoBehaviour
     Vector3 mMoveDir = Vector3.zero;
     bool isJumping;
 
+    bool isDie = false;
+
     void Update()
     {
         if (mCharacterController.isGrounded)
@@ -42,6 +44,11 @@ public sealed class PlayerController : MonoBehaviour
                 mModelTrans.localRotation = mMoveDir.x < 0 ? 
                     Quaternion.Euler(0, 180f, 0) : Quaternion.Euler(0, 0, 0);
                 mAnimator.SetBool("Walk", true);
+
+                //
+                if (!SoundManager.Inst.isPlay("walk"))
+                    SoundManager.Inst.Play("walk");
+
             }
             else // input 없음으로 인한 미끄러짐 방지
             {
@@ -56,11 +63,21 @@ public sealed class PlayerController : MonoBehaviour
                 mMoveDir.y = jumpPower;
                 isJumping = true;
                 mAnimator.SetBool("Jump", true);
+
+                //
+                SoundManager.Inst.Play("jump");
             }
         }
 
         mMoveDir.y -= mGravity * Time.deltaTime;
         mCharacterController.Move(mMoveDir * Time.deltaTime);
+
+        //
+        if( this.transform.localPosition.y < -3f && !isDie)
+        {
+            isDie = true;
+            SoundManager.Inst.Play("game_over");
+        }
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -71,6 +88,9 @@ public sealed class PlayerController : MonoBehaviour
             GameManager.instance.ClearStage();
             var animator = hit.transform.GetComponent<Animator>();
             animator.SetBool("Goal", true);
+
+            //
+            SoundManager.Inst.Play("full_Strawberry");
         }
         else
         {

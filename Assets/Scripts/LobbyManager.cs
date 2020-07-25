@@ -11,8 +11,13 @@ public sealed class LobbyManager : MonoBehaviour
 	[SerializeField] private float fadeMul;
 	[SerializeField] private CanvasScaler canvasScaler;
 	[SerializeField] private Image fadeAlpha;
-	
-	private void Update()
+
+    private void Start()
+    {
+		SoundManager.Inst.Play("title_bgm",true);
+    }
+
+    private void Update()
 	{
 		if (Input.anyKey && !pressed)
 		{
@@ -45,7 +50,8 @@ public sealed class LobbyManager : MonoBehaviour
 			fadeAlpha.color = new Color(0, 0, 0, q);
 			yield return null;
 		}
-		
+		SoundManager.Inst.Stop("title_bgm");
+		SoundManager.Inst.Play("default_bgm", true);
 		SceneManager.LoadScene("Stage1");
 	}
 }
