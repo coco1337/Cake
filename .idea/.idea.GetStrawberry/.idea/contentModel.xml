@@ -16,10 +16,9 @@
           <e p="MapRotateController.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="RotateSelf.cs" t="Include" />
           <e p="Shaders" t="Include">
             <e p="AlwaysVisible.shader" t="Include" />
-            <e p="CubeMapShader.shader" t="Include" />
-            <e p="NewImageEffectShader.shader" t="Include" />
             <e p="Skybox Cubemap Extended.shader" t="Include" />
           </e>
           <e p="Strawberry.cs" t="Include" />
