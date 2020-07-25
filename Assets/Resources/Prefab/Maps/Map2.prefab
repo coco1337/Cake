@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1521165178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521165179}
+  m_Layer: 0
+  m_Name: StartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1521165179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521165178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 1, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 630148234006423109}
+  m_RootOrder: 159
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630148232202975289
 GameObject:
   m_ObjectHideFlags: 0
@@ -12369,6 +12399,7 @@ Transform:
   - {fileID: 6425745321149517154}
   - {fileID: 4746063947325408298}
   - {fileID: 8779182288788319967}
+  - {fileID: 1521165179}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14617,12 +14648,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54cd2e5fb58d2844b417dbb0dcf1a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cube: {fileID: 7526595910217486063, guid: f078c80626c8b5940856b28053ebca20, type: 3}
   cubeSize: 0.2
   cubesInRow: 5
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
   state: 0
+  Player: {fileID: 0}
+  isBreak: 0
 --- !u!1 &2873349428867188209
 GameObject:
   m_ObjectHideFlags: 0
@@ -14729,12 +14763,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54cd2e5fb58d2844b417dbb0dcf1a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cube: {fileID: 7526595910217486063, guid: f078c80626c8b5940856b28053ebca20, type: 3}
   cubeSize: 0.2
   cubesInRow: 5
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
   state: 0
+  Player: {fileID: 0}
+  isBreak: 0
 --- !u!1001 &1449327324806943905
 PrefabInstance:
   m_ObjectHideFlags: 0
