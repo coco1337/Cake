@@ -46,6 +46,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StrawberryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Strawberry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" />
@@ -55,7 +56,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RotateSelf.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CRTShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -194,5 +194,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595601041687" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/DropChecker.cs</url>
+          <line>13</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/DropChecker.cs" initialLine="13">
+            <startOffsets>
+              <option value="289" />
+            </startOffsets>
+            <endOffsets>
+              <option value="290" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
