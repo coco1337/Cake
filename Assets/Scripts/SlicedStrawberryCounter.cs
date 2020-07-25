@@ -8,6 +8,7 @@ public sealed class SlicedStrawberryCounter : MonoBehaviour
 	private int strawberryCount;
 
 	public void AddStrawberryCount(int i) => strawberryCount += i;
+	public int GetStrawberryCount => strawberryCount;
 	
 	// Start is called before the first frame update
 	private void Start()
