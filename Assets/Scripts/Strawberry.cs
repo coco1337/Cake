@@ -17,7 +17,11 @@ public sealed class Strawberry : MonoBehaviour
 		if (other.transform.CompareTag("Player"))
 		{
 			gaugeController.IncreaseStrawberryCount();
-			// TODO : 이펙트 구현
+			
+            // TODO : 이펙트 구현
+            var player = other.GetComponent<Player>();
+            player.ShowEatEffect();
+
 			Destroy(this.gameObject);
 
 			//

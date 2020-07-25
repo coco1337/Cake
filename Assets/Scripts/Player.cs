@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] PlayerController mPlayerController;
+    [SerializeField] Animator mEffectAnimator;
     [SerializeField] float mSugarHighTime;
-    //[SerializeField] SugarModeEffect  // 아직 미정
 
     WaitForSeconds mWaitSugarTime;
 
@@ -19,19 +19,23 @@ public class Player : MonoBehaviour
     {
         StartCoroutine(CSugarHighTime());
     }
-
-    /// <summary>
-    /// 딸기 조각을 모을 때마다 캐릭터 변화
-    /// </summary>
-    public void ChangeCharacterModel(int level)
-    {
-
-    }
-
+    
     IEnumerator CSugarHighTime()
     {
         mPlayerController.isSugarHighMode = true;
         yield return mWaitSugarTime;
         mPlayerController.isSugarHighMode = false;
+    }
+
+    public void ShowEatEffect()
+    {
+        StartCoroutine(CEatEffect());
+    }
+
+    IEnumerator CEatEffect()
+    {
+        mEffectAnimator.SetBool("getStrawberry", true);
+        yield return new WaitForSeconds(.3f);
+        mEffectAnimator.SetBool("getStrawberry", false);
     }
 }
