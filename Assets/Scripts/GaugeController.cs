@@ -11,6 +11,8 @@ public sealed class GaugeController : MonoBehaviour
 	[SerializeField] private GameObject gaugeGroup;
 
 	private int strawberryCount;
+
+	public int GetStrawberryCount => strawberryCount;
 	
 	// Start is called before the first frame update
 	private void Start()
