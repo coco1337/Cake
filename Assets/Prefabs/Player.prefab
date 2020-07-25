@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mCharacterController: {fileID: 3034493899030105813}
   mAnimator: {fileID: 6516268448332934172}
+  mModelTrans: {fileID: 5341708783814534472}
   mMoveSpeed: 8
   mJumpPower: 5
   mSugarMoveSpeed: 4
