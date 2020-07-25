@@ -34,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/CubeBreak.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Strawberry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GoalStrawberry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,11 +53,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Strawberry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" />
-        <option value="$PROJECT_DIR$/Assets/CubeBreak.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CubeMapShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RotateSelf.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CRTShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/CubeBreak.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GoalStrawberry.cs" />
       </list>
     </option>
   </component>
