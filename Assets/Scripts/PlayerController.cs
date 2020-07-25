@@ -65,10 +65,12 @@ public sealed class PlayerController : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log(hit.gameObject.name);
+        // Debug.Log(hit.gameObject.name);
         if (hit.collider.CompareTag("Goal"))
         {
             GameManager.instance.ClearStage();
+            var animator = hit.transform.GetComponent<Animator>();
+            animator.SetBool("Goal", true);
         }
         else
         {
