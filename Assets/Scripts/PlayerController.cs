@@ -27,7 +27,6 @@ public sealed class PlayerController : MonoBehaviour
 
             if (isJumping)
             {
-                Debug.Log("@@## Jump False");
                 mAnimator.SetBool("Jump", false);
             }
 
@@ -36,8 +35,6 @@ public sealed class PlayerController : MonoBehaviour
                 mMoveDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
                 mMoveDir = transform.TransformDirection(mMoveDir);
                 mMoveDir *= moveSpeed;
-
-                Debug.Log("@@## Walk True");
                 mAnimator.SetBool("Walk", true);
             }
             else // input 없음으로 인한 미끄러짐 방지
@@ -45,8 +42,6 @@ public sealed class PlayerController : MonoBehaviour
                 mMoveDir = Vector3.zero;
                 mMoveDir = transform.TransformDirection(mMoveDir);
                 mMoveDir *= moveSpeed;
-
-                Debug.Log("@@## Walk False");
                 mAnimator.SetBool("Walk", false);
             }
 
@@ -54,8 +49,6 @@ public sealed class PlayerController : MonoBehaviour
             {
                 mMoveDir.y = jumpPower;
                 isJumping = true;
-
-                Debug.Log("@@## Jump True");
                 mAnimator.SetBool("Jump", true);
             }
         }
@@ -66,6 +59,10 @@ public sealed class PlayerController : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("Hit " + hit.collider.name);
+        var cubeBreak = hit.collider.gameObject.GetComponent<CubeBreak>();
+        if (cubeBreak != null)
+        {
+            cubeBreak.BreakOk();
+        }
     }
 }
