@@ -5,22 +5,14 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     [SerializeField] DropChecker mDropChecker;
+    [SerializeField] Transform mStartPosition;
 
-    public Transform StartPosition;
     Player mPlayer;
 
     public void Init()
     {
         mPlayer = GameManager.instance.GetPlayer;
-        
-        if (StartPosition != null)
-        {
-            mDropChecker.SetStartPosition(StartPosition);
-            mPlayer.transform.position = StartPosition.position;
-        }
-        else
-        {
-            Debug.LogError("시작 지점이 설정되지 않았습니다.");
-        }
+        mDropChecker.SetStartPosition(mStartPosition);
+        mPlayer.transform.position = mStartPosition.position;
     }
 }

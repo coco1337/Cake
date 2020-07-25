@@ -405,6 +405,11 @@ PrefabInstance:
       propertyPath: mSugarMoveSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1274541808339347982, guid: 5e753b550f257f742b2f9349c87be67b,
+        type: 3}
+      propertyPath: GC
+      value: 
+      objectReference: {fileID: 3616291425113068805}
     - target: {fileID: 1291362436287537964, guid: 5e753b550f257f742b2f9349c87be67b,
         type: 3}
       propertyPath: m_Name
