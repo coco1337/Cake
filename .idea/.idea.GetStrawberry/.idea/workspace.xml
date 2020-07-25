@@ -46,7 +46,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StrawberryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Strawberry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" />
@@ -56,6 +55,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RotateSelf.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CRTShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
