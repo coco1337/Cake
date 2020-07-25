@@ -84,7 +84,7 @@
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // i.albedo = _TexColor;
-                return fixed4(_TexColor, 1);
+                return fixed4(_TexColor, 1) * col;
             }
             ENDCG
         }

@@ -47,8 +47,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StrawberryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Strawberry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" />
       </list>
     </option>
   </component>
@@ -91,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595601025591</updated>
-      <workItem from="1595601033559" duration="21119000" />
+      <workItem from="1595601033559" duration="21760000" />
     </task>
     <servers />
   </component>
