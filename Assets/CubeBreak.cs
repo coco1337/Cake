@@ -28,11 +28,10 @@ public class CubeBreak : MonoBehaviour
         state = 0;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void BreakOne()
     {
         if (state == 1) return;
-        if (collision.collider.CompareTag("Player"))
-        {
+    
             this.GetComponent<MeshRenderer>().enabled = false;
             this.GetComponent<BoxCollider>().isTrigger = true;
             //
@@ -64,8 +63,74 @@ public class CubeBreak : MonoBehaviour
                 }
             }
             StartCoroutine(cDelay(true));
-        }
+        
     }
+
+    public void BreakTwo()
+    {
+        if (state != 2) return;
+        //if (other.CompareTag("Player"))
+        //{
+            Rigidbody[] rb = this.GetComponentsInChildren<Rigidbody>();
+            for (int i = 0; i < rb.Length; i++)
+            {
+                rb[i].isKinematic = false;
+            }
+
+            Vector3 explisionsPos = this.transform.position;
+            Collider[] colliders = Physics.OverlapSphere(explisionsPos, explosionRadius);
+
+            foreach (Collider hit in colliders)
+            {
+
+                Rigidbody rbb = hit.GetComponent<Rigidbody>();
+                if (rbb != null)
+                {
+                    rbb.AddExplosionForce(explosionForce, transform.position + new Vector3(0, 1f, 0), explosionRadius, explosionUpward);
+                }
+            }
+       // }
+    }
+
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("AA");
+    //    if (state == 1) return;
+    //    if (collision.collider.CompareTag("Player"))
+    //    {
+    //        this.GetComponent<MeshRenderer>().enabled = false;
+    //        this.GetComponent<BoxCollider>().isTrigger = true;
+    //        //
+    //        //
+    //        state = 1;
+
+    //        for (int x = 0; x < cubesInRow; x++)
+    //        {
+    //            for (int y = 0; y < cubesInRow; y++)
+    //            {
+    //                for (int z = 0; z < cubesInRow; z++)
+    //                {
+    //                    CreatePiece(x, y, z);
+    //                }
+    //            }
+
+    //        }
+    //        Vector3 explisionsPos = this.transform.position;
+
+    //        Collider[] colliders = Physics.OverlapSphere(explisionsPos, explosionRadius);
+
+    //        foreach (Collider hit in colliders)
+    //        {
+
+    //            Rigidbody rb = hit.GetComponent<Rigidbody>();
+    //            if (rb != null)
+    //            {
+    //                rb.AddExplosionForce(explosionForce, transform.position + new Vector3(0, 0.3f, 0), explosionRadius, explosionUpward);
+    //            }
+    //        }
+    //        StartCoroutine(cDelay(true));
+    //    }
+    //}
     public void OnTriggerEnter(Collider other)
     {
         if (state != 2) return;
