@@ -68,6 +68,8 @@ public class CubeBreak : MonoBehaviour
                 rb.AddExplosionForce(explosionForce, transform.position + new Vector3(0, 1f, 0), explosionRadius, explosionUpward);
             }
         }
+
+        SoundManager.Inst.Play("cube_break");
         StartCoroutine(cDelay());
     }
 
