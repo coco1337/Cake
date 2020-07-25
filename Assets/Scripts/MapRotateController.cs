@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public sealed class MapRotateController : MonoBehaviour
@@ -7,10 +8,15 @@ public sealed class MapRotateController : MonoBehaviour
 	[SerializeField] private Transform mMapTrans;
 	[SerializeField] private Transform mPlayerTrans;
     [SerializeField] private float mDuration = 0.5f;
+    [SerializeField] private Transform pivot;
 
-    Coroutine mRotateCoroutine;
-    WaitForFixedUpdate mWaitUpdate = new WaitForFixedUpdate();
+    // Coroutine mRotateCoroutine;
+    // WaitForFixedUpdate mWaitUpdate = new WaitForFixedUpdate();
 
+    private int rotateCode = 0;
+    private bool inRotateCoroutine = false;
+    private int rotateCount = 0;
+    
     //void FixedUpdate()
     //{
     //       if (Input.GetKey(KeyCode.A))
@@ -25,41 +31,49 @@ public sealed class MapRotateController : MonoBehaviour
 
     void Update()
     {
-        int rotateCode = 0;
+        rotateCode = 0;
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             rotateCode = -1;
+            inRotateCoroutine = true;
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             rotateCode = 1;
+            inRotateCoroutine = true;
         }
 
-        if (mRotateCoroutine == null && rotateCode != 0)
-            mRotateCoroutine = StartCoroutine(CRotateMap(rotateCode));
+        if (inRotateCoroutine && rotateCode != 0)
+            StartCoroutine(CRotateMap(rotateCode));
     }
 
     IEnumerator CRotateMap(int rotateCode)
     {
-        Vector3 axis = rotateCode > 0 ? Vector3.up : Vector3.down;
-        bool isRotating = true;
+        rotateCount += rotateCode;
+        inRotateCoroutine = true;
+        var yRot = pivot.rotation.eulerAngles.y;
+        float axis = rotateCode > 0 ? 1 : -1;
         float time = 0;
 
-        while (isRotating)
+        while (true)
         {
             if (time < mDuration)
             {
-                time += Time.deltaTime;
-                mMapTrans.RotateAround(mPlayerTrans.position, axis, (90f * Time.deltaTime / mDuration));
+                time += Time.fixedDeltaTime;
+                mMapTrans.SetParent(pivot);
+                pivot.Rotate(pivot.up * axis, (90f * Time.deltaTime / mDuration));
+                // mMapTrans.RotateAround(mPlayerTrans.position, axis, (90f * Time.deltaTime / mDuration));
             }
-            else // time과 duration 값의 오차에 비례하게 카메라를 한번 더 회전시켜서 오차를 최소화
+            else
             {
-                mMapTrans.RotateAround(mPlayerTrans.position, axis, (90f * (mDuration - time) / mDuration));
-                isRotating = false;
+                pivot.rotation = Quaternion.Euler(new Vector3(0, 90 * rotateCount, 0));
+                mMapTrans.SetParent(null);
+                break;
             }
-            yield return mWaitUpdate;
+            yield return new WaitForFixedUpdate();
         }
-        mRotateCoroutine = null;
+
+        inRotateCoroutine = false;
     }
 }

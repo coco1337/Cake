@@ -7,15 +7,13 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CubeBreak.cs" t="Include" />
-        <e p="MapModels" t="Include">
-          <e p="map desing modeling.txt" t="Include" />
-        </e>
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
           <e p="DropChecker.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GaugeController.cs" t="Include" />
           <e p="MapRotateController.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Shaders" t="Include">
             <e p="AlwaysVisible.shader" t="Include" />
