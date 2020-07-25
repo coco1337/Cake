@@ -4,6 +4,8 @@
 public sealed class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController mCharacterController;
+    [SerializeField] private Animator mAnimator;
+
     [SerializeField] private float mMoveSpeed;
     [SerializeField] private float mJumpPower;
 
@@ -14,33 +16,53 @@ public sealed class PlayerController : MonoBehaviour
 
     const float mGravity = 9.8f;
     Vector3 mMoveDir = Vector3.zero;
+    bool isJumping;
 
     void Update()
     {
         if (mCharacterController.isGrounded)
         {
             float moveSpeed = isSugarHighMode ? mSugarMoveSpeed : mMoveSpeed;
-            float jumpPower = isSugarHighMode ? mSugarJumpPower: mJumpPower;
+            float jumpPower = isSugarHighMode ? mSugarJumpPower : mJumpPower;
+
+            if (isJumping)
+            {
+                mAnimator.SetBool("Jump", false);
+            }
 
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 mMoveDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
                 mMoveDir = transform.TransformDirection(mMoveDir);
                 mMoveDir *= moveSpeed;
+                mAnimator.SetBool("Walk", true);
             }
             else // input 없음으로 인한 미끄러짐 방지
             {
                 mMoveDir = Vector3.zero;
                 mMoveDir = transform.TransformDirection(mMoveDir);
                 mMoveDir *= moveSpeed;
+                mAnimator.SetBool("Walk", false);
             }
 
             if (Input.GetButtonDown("Jump"))
+            {
                 mMoveDir.y = jumpPower;
-
+                isJumping = true;
+                mAnimator.SetBool("Jump", true);
+            }
         }
 
         mMoveDir.y -= mGravity * Time.deltaTime;
         mCharacterController.Move(mMoveDir * Time.deltaTime);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        var cubeBreak = hit.collider.gameObject.GetComponent<CubeBreak>();
+        if (cubeBreak != null)
+        {
+            cubeBreak.BreakOk();
+        }
     }
 }
