@@ -5,7 +5,6 @@ public sealed class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController mCharacterController;
     [SerializeField] private Animator mAnimator;
-    [SerializeField] private Transform mModelTrans;
 
     [SerializeField] private float mMoveSpeed;
     [SerializeField] private float mJumpPower;
@@ -36,9 +35,6 @@ public sealed class PlayerController : MonoBehaviour
                 mMoveDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
                 mMoveDir = transform.TransformDirection(mMoveDir);
                 mMoveDir *= moveSpeed;
-
-                mModelTrans.localRotation = mMoveDir.x < 0 ? 
-                    Quaternion.Euler(0, 180f, 0) : Quaternion.Euler(0, 0, 0);
                 mAnimator.SetBool("Walk", true);
             }
             else // input 없음으로 인한 미끄러짐 방지
