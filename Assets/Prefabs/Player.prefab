@@ -54,7 +54,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
+  m_Height: 0.7
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -74,10 +74,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mCharacterController: {fileID: 3034493899030105813}
-  mMoveSpeed: 10
-  mJumpPower: 10
-  mSugarMoveSpeed: 20
-  mSugarJumpPower: 20
+  mMoveSpeed: 8
+  mJumpPower: 5
+  mSugarMoveSpeed: 4
+  mSugarJumpPower: 1.31
   isSugarHighMode: 0
 --- !u!114 &3629400289111012438
 MonoBehaviour:

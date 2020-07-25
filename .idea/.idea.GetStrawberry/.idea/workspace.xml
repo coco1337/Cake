@@ -50,6 +50,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/CubeBreak.cs" />
       </list>
     </option>
   </component>

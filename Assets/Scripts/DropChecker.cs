@@ -3,7 +3,12 @@
 [RequireComponent(typeof(BoxCollider))]
 public class DropChecker : MonoBehaviour
 {
-    [SerializeField] Transform mStartPosition;
+    Transform mStartPosition;
+
+    public void SetStartPosition(Transform startPosition)
+    {
+        mStartPosition = startPosition;
+    }
 
     void OnTriggerEnter(Collider other)
     {
