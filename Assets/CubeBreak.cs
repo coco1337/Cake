@@ -5,8 +5,8 @@ using UnityEngine;
 public class CubeBreak : MonoBehaviour
 {
     public GameObject Cube;
-    public float cubeSize = 0.2f;
-    public int cubesInRow = 5;
+    public float cubeSize = 0.3f;
+    public int cubesInRow = 3;
 
     float cubesPivotDistance;
     Vector3 cubesPivot;
