@@ -9385,6 +9385,7 @@ MonoBehaviour:
   explosionUpward: 0.4
   state: 0
   Player: {fileID: 0}
+  isBreak: 0
 --- !u!1 &689317548
 GameObject:
   m_ObjectHideFlags: 0
@@ -9711,13 +9712,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1533055087810210138, guid: 3a126623e3daece44b9307da12dd0379, type: 3}
-  cubeSize: 0.25
-  cubesInRow: 4
-  explosionForce: 50
-  explosionRadius: 4
-  explosionUpward: 0.4
+  cubeSize: 0.3
+  cubesInRow: 3
+  explosionForce: 10
+  explosionRadius: 3
+  explosionUpward: 0.1
   state: 0
   Player: {fileID: 0}
+  isBreak: 0
 --- !u!65 &739872493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10733,13 +10735,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1533055087810210138, guid: 3a126623e3daece44b9307da12dd0379, type: 3}
-  cubeSize: 0.25
-  cubesInRow: 4
-  explosionForce: 50
-  explosionRadius: 4
-  explosionUpward: 0.4
+  cubeSize: 0.3
+  cubesInRow: 3
+  explosionForce: 30
+  explosionRadius: 3
+  explosionUpward: 0.3
   state: 0
   Player: {fileID: 0}
+  isBreak: 0
 --- !u!1 &884357178
 GameObject:
   m_ObjectHideFlags: 0
@@ -12260,6 +12263,10 @@ PrefabInstance:
       propertyPath: cubesInRow
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1185715439, guid: 99f2dd96b3b7a4b41a2a0d3df5965968, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2034173019983237389, guid: 99f2dd96b3b7a4b41a2a0d3df5965968,
         type: 3}
       propertyPath: m_Size.y
@@ -12335,7 +12342,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1185715439, guid: 99f2dd96b3b7a4b41a2a0d3df5965968, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 99f2dd96b3b7a4b41a2a0d3df5965968, type: 3}
 --- !u!1 &1077092287
 GameObject:
@@ -13546,32 +13554,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183720675}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1185715434 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8032206466854277968, guid: 99f2dd96b3b7a4b41a2a0d3df5965968,
-    type: 3}
-  m_PrefabInstance: {fileID: 1047673618}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1185715440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185715434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d54cd2e5fb58d2844b417dbb0dcf1a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cube: {fileID: 0}
-  cubeSize: 0.2
-  cubesInRow: 5
-  explosionForce: 50
-  explosionRadius: 4
-  explosionUpward: 0.4
-  state: 0
-  Player: {fileID: 0}
 --- !u!1 &1202752757
 GameObject:
   m_ObjectHideFlags: 0
@@ -19040,13 +19022,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1533055087810210138, guid: 3a126623e3daece44b9307da12dd0379, type: 3}
-  cubeSize: 0.25
-  cubesInRow: 4
-  explosionForce: 50
-  explosionRadius: 4
-  explosionUpward: 0.4
+  cubeSize: 0.3
+  cubesInRow: 3
+  explosionForce: 30
+  explosionRadius: 3
+  explosionUpward: 0.3
   state: 0
   Player: {fileID: 0}
+  isBreak: 0
 --- !u!1 &2013526171
 GameObject:
   m_ObjectHideFlags: 0
