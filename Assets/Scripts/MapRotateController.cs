@@ -6,10 +6,10 @@ public sealed class MapRotateController : MonoBehaviour
 {
 	[SerializeField] private Transform mMapTrans;
 	[SerializeField] private Transform mPlayerTrans;
-    [SerializeField] private float mRotateSpeed;
+    [SerializeField] private float mDuration = 0.5f;
 
     Coroutine mRotateCoroutine;
-    WaitForEndOfFrame mWaitFrame = new WaitForEndOfFrame();
+    WaitForFixedUpdate mWaitUpdate = new WaitForFixedUpdate();
 
     //void FixedUpdate()
     //{
@@ -42,19 +42,24 @@ public sealed class MapRotateController : MonoBehaviour
 
     IEnumerator CRotateMap(int rotateCode)
     {
-        float totalRotate = 0;
         Vector3 axis = rotateCode > 0 ? Vector3.up : Vector3.down;
-        Vector3 rot = mMapTrans.rotation.eulerAngles;
+        bool isRotating = true;
+        float time = 0;
 
-        while (totalRotate <= 90f)
+        while (isRotating)
         {
-            totalRotate += mRotateSpeed;
-            mMapTrans.RotateAround(mPlayerTrans.position, axis, mRotateSpeed);
-            yield return mWaitFrame;
+            if (time < mDuration)
+            {
+                time += Time.deltaTime;
+                mMapTrans.RotateAround(mPlayerTrans.position, axis, (90f * Time.deltaTime / mDuration));
+            }
+            else // time과 duration 값의 오차에 비례하게 카메라를 한번 더 회전시켜서 오차를 최소화
+            {
+                mMapTrans.RotateAround(mPlayerTrans.position, axis, (90f * (mDuration - time) / mDuration));
+                isRotating = false;
+            }
+            yield return mWaitUpdate;
         }
-
-        float newY = rot.y + (90f * axis.y);
-        mMapTrans.rotation = Quaternion.Euler(new Vector3(0, newY, 0));
         mRotateCoroutine = null;
     }
 }
