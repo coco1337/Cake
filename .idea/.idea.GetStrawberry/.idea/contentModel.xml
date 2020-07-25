@@ -19,6 +19,7 @@
           <e p="RotateSelf.cs" t="Include" />
           <e p="Shaders" t="Include">
             <e p="AlwaysVisible.shader" t="Include" />
+            <e p="CRTShader.shader" t="Include" />
             <e p="Skybox Cubemap Extended.shader" t="Include" />
           </e>
           <e p="Strawberry.cs" t="Include" />
