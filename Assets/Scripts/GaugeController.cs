@@ -22,21 +22,6 @@ public sealed class GaugeController : MonoBehaviour
 		}
 	}
 
-	private IEnumerator SugarHighMode(int i)
-	{
-		for (int j = 0; j < gaugeCount; ++j)
-		{
-			var inner = gauges[j].GetComponentsInChildren<Image>()[1];
-			while (inner.fillAmount > 0)
-			{
-				inner.fillAmount -= Time.fixedDeltaTime / 2.5f;
-				yield return null;
-			}
-		}
-
-		strawberryCount = 0;
-	}
-
 	public void IncreaseStrawberryCount()
 	{
 		++strawberryCount;
@@ -64,4 +49,21 @@ public sealed class GaugeController : MonoBehaviour
 			}
 		}
 	}
+	
+	
+	private IEnumerator SugarHighMode(int i)
+	{
+		for (int j = 0; j < gaugeCount; ++j)
+		{
+			var inner = gauges[j].GetComponentsInChildren<Image>()[1];
+			while (inner.fillAmount > 0)
+			{
+				inner.fillAmount -= Time.fixedDeltaTime / 2.5f;
+				yield return null;
+			}
+		}
+
+		strawberryCount = 0;
+	}
+
 }
