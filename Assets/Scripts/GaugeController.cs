@@ -51,8 +51,10 @@ public sealed class GaugeController : MonoBehaviour
 		}
 	}
 
-	public void UseSugarHighMode()
+	private void UseSugarHighMode()
 	{
+		GameManager.instance.GetPlayer.StartSugarHighTime();
+		
 		for (int i = 0; gaugeCount - i - 1 > 0; ++i)
 		{
 			if (gauges[gaugeCount - i - 1].GetComponentsInChildren<Image>()[1].fillAmount != 0)
