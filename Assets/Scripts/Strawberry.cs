@@ -25,7 +25,7 @@ public sealed class Strawberry : MonoBehaviour
 			Destroy(this.gameObject);
 
 			//
-			SoundManager.Inst.Play("half_Strawberry");
+			SoundManager.Inst.Play("half_Strawberry",false,0.5f);
 		}
 	}
 }

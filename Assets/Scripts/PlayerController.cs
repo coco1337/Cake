@@ -47,7 +47,7 @@ public sealed class PlayerController : MonoBehaviour
 
                 //
                 if (!SoundManager.Inst.isPlay("walk"))
-                    SoundManager.Inst.Play("walk");
+                    SoundManager.Inst.Play("walk",false,0.5f);
 
             }
             else // input 없음으로 인한 미끄러짐 방지
@@ -65,7 +65,7 @@ public sealed class PlayerController : MonoBehaviour
                 mAnimator.SetBool("Jump", true);
 
                 //
-                SoundManager.Inst.Play("jump");
+                SoundManager.Inst.Play("jump",false,0.7f);
             }
         }
 
@@ -77,6 +77,10 @@ public sealed class PlayerController : MonoBehaviour
         {
             isDie = true;
             SoundManager.Inst.Play("game_over");
+        }
+        else if( this.transform.localPosition.y > -1f && isDie)
+        {
+            isDie = false;
         }
     }
 

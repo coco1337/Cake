@@ -14,7 +14,7 @@ public sealed class LobbyManager : MonoBehaviour
 
     private void Start()
     {
-		SoundManager.Inst.Play("title_bgm",true);
+		SoundManager.Inst.Play("title_bgm",true,0.2f);
     }
 
     private void Update()
@@ -51,7 +51,7 @@ public sealed class LobbyManager : MonoBehaviour
 			yield return null;
 		}
 		SoundManager.Inst.Stop("title_bgm");
-		SoundManager.Inst.Play("default_bgm", true);
+		SoundManager.Inst.Play("default_bgm", true,0.2f);
 		SceneManager.LoadScene("Stage1");
 	}
 }
