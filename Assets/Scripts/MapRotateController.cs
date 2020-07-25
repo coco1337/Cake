@@ -5,13 +5,18 @@ using UnityEngine;
 
 public sealed class MapRotateController : MonoBehaviour
 {
-	[SerializeField] private Transform mMapTrans;
 	[SerializeField] private Transform mPlayerTrans;
     [SerializeField] private float mDuration = 0.5f;
     [SerializeField] private Transform pivot;
 
+	[SerializeField] private Transform mMapTrans;
     private bool inRotateCoroutine = false;
     private int rotateCount = 0;
+
+    public void LoadMap(Transform trans)
+    {
+        mMapTrans = trans;
+    }
 
     private void Update()
     {

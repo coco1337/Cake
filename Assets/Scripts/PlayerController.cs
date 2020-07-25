@@ -65,10 +65,18 @@ public sealed class PlayerController : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        var cubeBreak = hit.collider.gameObject.GetComponent<CubeBreak>();
-        if (cubeBreak != null && GC.GetStrawberryCount >= 2)
+        if (hit.collider.CompareTag("Goal"))
         {
-            cubeBreak.BreakOk(this.gameObject);
+            GameManager.instance.ClearStage();
+        }
+        else
+        {
+            var cubeBreak = hit.collider.gameObject.GetComponent<CubeBreak>();
+            if (cubeBreak != null && GC.GetStrawberryCount >= 2)
+            {
+                cubeBreak.BreakOk(this.gameObject);
+            }
+
         }
     }
 }
