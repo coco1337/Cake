@@ -62,7 +62,7 @@ public sealed class PlayerController : MonoBehaviour
         var cubeBreak = hit.collider.gameObject.GetComponent<CubeBreak>();
         if (cubeBreak != null)
         {
-            cubeBreak.BreakOk();
+            cubeBreak.BreakOk(this.gameObject);
         }
     }
 }

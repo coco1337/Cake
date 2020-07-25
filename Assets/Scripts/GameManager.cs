@@ -16,4 +16,11 @@ public class GameManager : MonoBehaviour
 		instance = this;
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 	}
+
+    public void LoadMap(int level)
+    {
+        Map map = null; // 어떻게 맵 관리할지 미정
+        map.Init();
+
+    }
 }
