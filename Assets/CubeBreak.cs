@@ -21,126 +21,82 @@ public class CubeBreak : MonoBehaviour
     bool isCheck;
 
     public GameObject Player;
+    public bool isBreak = false;
     //
     void Start()
     {
-        
-        //this.gameObject.AddComponent<Rigidbody>();
-        //this.GetComponent<Rigidbody>().useGravity = false;
-        //this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
         Player = null;
 
         cubesPivotDistance = cubeSize * cubesInRow / 2;
         cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
 
         state = 0;
+        isBreak = false;
     }
 
-    private void Update()
-    {
-        if( Player != null)
-        {
-            Vector3 a = new Vector3(Player.transform.localPosition.x, 0, Player.transform.localPosition.z);
-            Vector3 b = new Vector3(this.transform.localPosition.x, 0, this.transform.localPosition.z);
-            float dis = Vector3.Distance(a, b);
-            
-            if( dis > 1.2f)
-            {
-
-                state = 2;
-                Player = null;
-            }
-        }
-    }
 
     public void BreakOk(GameObject Player)
     {
-        if (state == 3) return;
-        if (state == 0)
+        if (isBreak) return;
+
+        this.GetComponent<MeshRenderer>().enabled = false;
+        this.GetComponent<BoxCollider>().enabled = false;
+
+
+        for (int x = 0; x < cubesInRow; x++)
         {
-            this.Player = Player;
-            Debug.Log("1번쨰");
-            this.GetComponent<MeshRenderer>().enabled = false;
-            this.GetComponent<BoxCollider>().isTrigger = true;
-            //this.GetComponent<BoxCollider>().size = new Vector3(1, 1.2f, 1);
-            //
-            //
-            state = 1;
-
-            for (int x = 0; x < cubesInRow; x++)
+            for (int y = 0; y < cubesInRow; y++)
             {
-                for (int y = 0; y < cubesInRow; y++)
+                for (int z = 0; z < cubesInRow; z++)
                 {
-                    for (int z = 0; z < cubesInRow; z++)
-                    {
-                        CreatePiece(x, y, z);
-                    }
-                }
-
-            }
-            Vector3 explisionsPos = this.transform.position;
-
-            Collider[] colliders = Physics.OverlapSphere(explisionsPos, explosionRadius);
-
-            foreach (Collider hit in colliders)
-            {
-
-                Rigidbody rb = hit.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.AddExplosionForce(explosionForce, transform.position + new Vector3(0, 1f, 0), explosionRadius, explosionUpward);
+                    CreatePiece(x, y, z);
                 }
             }
-            StartCoroutine(cDelay(true));
+
         }
-        else if (state == 2)
+        Vector3 explisionsPos = this.transform.position;
+
+        Collider[] colliders = Physics.OverlapSphere(explisionsPos, explosionRadius);
+
+        foreach (Collider hit in colliders)
         {
-            Debug.Log("2번쨰");
-            state = 3;
-            this.GetComponent<BoxCollider>().isTrigger = true;
-            //this.GetComponent<BoxCollider>().isTrigger = true;
 
-            Rigidbody[] rb = this.GetComponentsInChildren<Rigidbody>();
-            for (int i = 0; i < rb.Length; i++)
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                rb[i].isKinematic = false;
-            }
-
-            Vector3 explisionsPos = this.transform.position;
-            Collider[] colliders = Physics.OverlapSphere(explisionsPos, explosionRadius);
-
-            foreach (Collider hit in colliders)
-            {
-
-                Rigidbody rbb = hit.GetComponent<Rigidbody>();
-                if (rbb != null)
-                {
-                    rbb.AddExplosionForce(explosionForce, transform.position + new Vector3(0, 0f, 0), explosionRadius, explosionUpward);
-                }
+                rb.AddExplosionForce(explosionForce, transform.position + new Vector3(0, 1f, 0), explosionRadius, explosionUpward);
             }
         }
+        StartCoroutine(cDelay());
     }
 
-
-    IEnumerator cDelay(bool isKine)
+    IEnumerator cDelay()
     {
-        yield return new WaitForSeconds(0.13f);
-        Rigidbody[] rb = this.GetComponentsInChildren<Rigidbody>();
-        for (int i = 0; i < rb.Length; i++)
-        {
-            rb[i].isKinematic = isKine;
-        }
+        yield return new WaitForSeconds(0.2f);
+        this.GetComponent<BoxCollider>().enabled = false;
+        Vector3 explisionsPos = this.transform.position;
 
-        if (isKine)
+        Collider[] colliders = Physics.OverlapSphere(explisionsPos, explosionRadius);
+
+        foreach (Collider hit in colliders)
         {
-            //state = 2;
-            this.GetComponent<BoxCollider>().isTrigger = false;
-            this.GetComponent<BoxCollider>().size = new Vector3(1, 0.8f, 1);
+
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+            }
         }
-        else
+        yield return new WaitForSeconds(0.6f);
+        foreach (Collider hit in colliders)
         {
-            state = 3;
-            //this.GetComponent<BoxCollider>().isTrigger = true;
+
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+            }
         }
     }
     //
@@ -151,7 +107,7 @@ public class CubeBreak : MonoBehaviour
             porce = new Vector3(x, y, z);
         }
         GameObject piece;
-        //piece = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
         piece = Instantiate(Cube);
 
         piece.transform.position = transform.position + new Vector3(x, y, z) * cubeSize - cubesPivot;
@@ -159,7 +115,6 @@ public class CubeBreak : MonoBehaviour
 
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = cubeSize;
-        //piece.GetComponent<Rigidbody>().useGravity = false;
 
         piece.transform.parent = this.transform;
     }
