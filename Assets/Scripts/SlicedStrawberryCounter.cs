@@ -5,7 +5,7 @@ using UnityEngine;
 public sealed class SlicedStrawberryCounter : MonoBehaviour
 {
 	public static SlicedStrawberryCounter instance;
-	private int strawberryCount;
+	[SerializeField] private int strawberryCount;
 
 	public void AddStrawberryCount(int i) => strawberryCount += i;
 	public int GetStrawberryCount => strawberryCount;

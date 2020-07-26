@@ -13,6 +13,7 @@
           <e p="CameraController.cs" t="Include" />
           <e p="CubeBreak.cs" t="Include" />
           <e p="DropChecker.cs" t="Include" />
+          <e p="EndSceneEvents.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GaugeController.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
@@ -25,7 +26,13 @@
             <e p="AlwaysVisible.shader" t="Include" />
             <e p="Skybox Cubemap Extended.shader" t="Include" />
           </e>
+          <e p="SlicedStrawberryCounter.cs" t="Include" />
           <e p="Strawberry.cs" t="Include" />
+        </e>
+        <e p="Sound" t="Include">
+          <e p="0Script" t="Include">
+            <e p="SoundManager.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="GetStrawberry.sln" t="IncludeFlat" />
