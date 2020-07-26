@@ -23,12 +23,14 @@ public sealed class MapRotateController : MonoBehaviour
         if (inRotateCoroutine)
             return;
         
-        if (Input.GetKeyDown(KeyCode.A))
+        //if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             inRotateCoroutine = true;
             StartCoroutine(CRotateMap(-1));
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        //else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             inRotateCoroutine = true;
             StartCoroutine(CRotateMap(1));
