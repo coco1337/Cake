@@ -10,7 +10,7 @@ public sealed class GaugeController : MonoBehaviour
 	[SerializeField] private Image gaugePrefab;
 	[SerializeField] private GameObject gaugeGroup;
 
-	private int strawberryCount;
+	[SerializeField] private int strawberryCount;
 
 	public int GetStrawberryCount => strawberryCount;
 	
