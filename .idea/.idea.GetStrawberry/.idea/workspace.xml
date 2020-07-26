@@ -33,11 +33,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shaders/AlwaysVisible.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Strawberry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SlicedStrawberryCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MapRotateController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EndSceneEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DropChecker.cs" root0="FORCE_HIGHLIGHTING" />
@@ -53,12 +55,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CubeMapShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RotateSelf.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/CRTShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
         <option value="$PROJECT_DIR$/Assets/CubeBreak.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GoalStrawberry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UiFade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SlicedStrawberryCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GaugeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
@@ -86,10 +89,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25096">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="25096" />
+      <option name="pid" />
       <method v="2" />
     </configuration>
   </component>
@@ -104,6 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595601025591</updated>
       <workItem from="1595601033559" duration="22128000" />
+      <workItem from="1595723120934" duration="1135000" />
     </task>
     <servers />
   </component>
@@ -122,6 +126,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

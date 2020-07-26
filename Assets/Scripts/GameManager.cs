@@ -18,6 +18,8 @@ public sealed class GameManager : MonoBehaviour
 	[SerializeField] private Image fadeAlpha;
 
 	private Player player;
+	private bool isUpdateStrawberryCount = false;
+	
 	public Player GetPlayer => player;
 	public GaugeController GetGaugeController => gaugeController;
 
@@ -43,6 +45,10 @@ public sealed class GameManager : MonoBehaviour
 
 	private void GoNextScene(string sceneName)
 	{
+		if (isUpdateStrawberryCount)
+			return;
+
+		isUpdateStrawberryCount = true;
 		SlicedStrawberryCounter.instance.AddStrawberryCount(gaugeController.GetStrawberryCount);
 		StartCoroutine(ControlCanvasScale(sceneName));
 	}
